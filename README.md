@@ -4,7 +4,7 @@ Experimentos da disciplina de DW
 
 ## Exemplos
 
-* ['exemplo-01'](exemplo-01/README.md) - Mínimo de uma aplicação web.
+* [`exemplo-01`](exemplo-01/README.md) - Mínimo de uma aplicação web.
 
 ## Links
 
