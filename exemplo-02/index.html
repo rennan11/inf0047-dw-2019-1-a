@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exemplo 02</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            div,p {
+                background-color: blue;
+            }
+            div p {
+                color: red;
+            }
+            div > div > p {
+                color: green ;
+            }
+            .destaque {
+                color:cyan;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Aqui é um comentário -->
+        <h1>Título</h1>
+        <div id="bloco-principal">
+            Teste de CSS
+        </div>
+        <br />
+        <div class="destaque">
+            Outra DIV
+            <p>Parágrafo dentro da DIV</p>
+            <div>
+                DIV dentro de DIV
+                <p>
+                    Outro parágrafo
+                </p>
+            </div>
+        </div>
+        <p>Exemplo de Paragrafo</p>
+    </body>
+</html>
