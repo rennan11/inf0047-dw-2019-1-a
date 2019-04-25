@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculadora de Churrasco</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="content">
+            <form name="Calculadora">
+                <h1>Calculadora de Churrasco</h1>
+                <input type="text" placeholder="H" name="homens">
+                <input type="text" placeholder="M" name="mulheres">
+                <input type="text" placeholder="C" name="criancas">
+                <p>Tipos de Carne</p>
+                <input type="checkbox" name="alcatra" id="alcatra">Alcatra
+                <input type="checkbox" name="picanha" id="picanha">Picanha
+                <input type="checkbox" name="cupim" id="cupim">Cupim
+                <input type="checkbox" name="linguica" id="linguica">Linguiça
+                <p>Bebidas</p>
+                <input type="checkbox" name="cerveja" id="cerveja">Cerveja
+                <p><button type="button" onclick="Calcular()">Calcular</button></p>
+                <textarea id="resultado" rows="8" cols="60"></textarea>
+            </form>
+            <div class="footer">* H = Homen - M = Mulheres - C = Crianças</div>
+        </div>
+    </body>
+    <script>
+        function Calcular() {
+            var homensCarne = 400;
+            var mulheresCarne = 300;
+            var criancasCarne = 200;
+            var qntdCarnes = 0;
+            var texto = "";
+            var homens = document.forms["Calculadora"]["homens"].value;
+            var mulheres = document.forms["Calculadora"]["mulheres"].value;
+            var criancas = document.forms["Calculadora"]["criancas"].value;
+            var valorTotal = homens * homensCarne + mulheres * mulheresCarne + criancas * criancasCarne;
+            var alcatra = document.getElementById("alcatra").checked;
+            var picanha = document.getElementById("picanha").checked;
+            var cupim = document.getElementById("cupim").checked;
+            var linguica = document.getElementById("linguica").checked;
+            var cerveja = document.getElementById("cerveja").checked;
+
+            if(alcatra) qntdCarnes++;
+            if(picanha) qntdCarnes++;
+            if(cupim) qntdCarnes++;
+            if(linguica) qntdCarnes++;
+
+            var cadaCarne = valorTotal / qntdCarnes;
+
+            if(alcatra) texto = texto + "\nQuantidade Alcatra: " + cadaCarne + "g";
+            if(picanha) texto = texto + "\nQuantidade Picanha: " + cadaCarne + "g";
+            if(cupim) texto = texto + "\nQuantidade Cupim: " + cadaCarne + "g";
+            if(linguica) texto = texto + "\nQuantidade Linguica: " + cadaCarne + "g";
+
+            if(cerveja) {
+                var adultos = parseInt(homens) + parseInt(mulheres);
+                var qntdCerveja = adultos * 1.5;
+                texto = texto + "\nLitros de Cerveja: " + qntdCerveja + "L";
+            }
+
+
+
+            document.getElementById("resultado").innerHTML = texto;
+        }
+    </script>
+</html>
