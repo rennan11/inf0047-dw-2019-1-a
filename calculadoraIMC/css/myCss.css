@@ -1,0 +1,10 @@
+#resultado {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    display: none;
+}
+#contentRegras {
+    margin-top: 100px;
+    display: none;
+}
